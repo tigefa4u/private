@@ -11,9 +11,9 @@ ffmpeg_task:
     - apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet p7zip p7zip-full zip unzip
     - apt-get install -yqq wget aria2 ffmpeg telnet tree
   test_script:
-    - aria2c --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/9C058E51EC43287A892687F289EE229E6E2AA3B6"
-##    - "aria2c --header 'Host: nl36.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/122722319' --header 'Upgrade-Insecure-Requests: 1' 'https://nl36.seedr.cc/ff_get/628699879/Ip.Man.4.The.Finale.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4?st=y_OW6FK4FNEXguvACA-rCA&e=1586457883' --out 'Ip.Man.4.The.Finale.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4'"
-    - ffmpeg -i "My Spy (2020) [720p] [BluRay] [YTS.MX]/My.Spy.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="My Spy 2020" -preset veryfast My.Spy.2020.720p.BluRay.x265.mp4
+#    - aria2c --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/9C058E51EC43287A892687F289EE229E6E2AA3B6"
+    - "aria2c --header 'Host: fr4.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/123171345' --header 'Upgrade-Insecure-Requests: 1' 'https://fr4.seedr.cc/ff_get/630857639/My.Spy.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4?st=YpIYtXKH5RRdgdfWOm1SpA&e=1586723003' --out 'My.Spy.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4'"
+    - ffmpeg -i "My.Spy.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="My Spy 2020" -preset veryfast My.Spy.2020.720p.BluRay.x265.mp4
     - ls -hal
   binaries_artifacts:
     path: "My.Spy.2020.720p.BluRay.x265.mp4"
