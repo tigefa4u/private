@@ -13,7 +13,7 @@ ffmpeg_task:
   test_script:
 #    - aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/stars239/download/140151/onejav.com_stars239.torrent"
     - "aria2c --check-certificate=false --header 'Host: nl19.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/133330964' --header 'Upgrade-Insecure-Requests: 1' 'https://nl19.seedr.cc/ff_get/686529734/Ringu.1998.720p.BluRay.x264-[YTS.AM].mp4?st=kASGdpWO6m60Ynrv84XF7Q&e=1592411771' --out 'Ringu.1998.720p.BluRay.x264-[YTS.AM].mp4'"
-    - ffmpeg -i "Ringu.1998.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Ringu 1998 -preset veryfast Ringu.1998.720p.BluRay.x265.mp4
+    - ffmpeg -i "Ringu.1998.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Ringu 1998" -preset veryfast Ringu.1998.720p.BluRay.x265.mp4
     - ls -hal
   binaries_artifacts:
     path: "Ringu.1998.720p.BluRay.x265.mp4"
